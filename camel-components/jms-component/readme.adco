@@ -1,0 +1,28 @@
+- New requirement is to take trade orders from a JMS queue.
+- JMS messaging:
+    - Very useful integration technology
+    - It promotes loose coupling in application
+    - Provides reliable messaging
+    - Having asynchronous model is great advantage
+    - In jms message producers and consumers talk to one another through and intermediate- JMS desitnation (queue and topic)
+    - Queue is point-to-point channel where each message has only one consumer. Topic operate on publish/subscribe model
+        where single message can be delivered to multiple consumers if they have subscribed for it.
+    - Download/Run activemq broker. activemq start
+- JMS configuration:
+    - There are several JMS providers/broker available
+    - We need to provide configuration setup to use a specific provider
+    - ConnectionFactory is the source of our configuration
+    - We will ActiveMQ in this module so we will ActiveMQConnectionFactory class to configure our jms
+    - <property name="brokerURL" value="tcp://localhost:61616" />
+    - broker url is provider specific. Here the broker uri tell the ActiveMQ component to connect to jms broker/provider
+        using TCP on port 61616
+    - ActiveMQ supports connections over VM,SSL,UDP, multicast etc protocols as well.
+    - By default jsm ConnectionFactory does not pool connections to the broker, so it creates a new connection for
+        every message. We can avoid it by using a different connection factory that uses connection pooling
+    - To use activemq with camel we need org.apache.camel/activemq-camel dependency
+    - To use jms component we need camel-jms module dependency org.apache.camel/camel-jms
+
+- We will use ProducerTemplate to send a message to a queue
+- Template class is a utility class which gives us an easy access to an API/endpoint etc.
+- For eg. ProducerTemplate template = camelContext.createProducerTemplate();
+    template.sendBody("jms:queue:tradeOrders","body of order");

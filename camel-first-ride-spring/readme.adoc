@@ -1,0 +1,9 @@
+- We define CamelContext configuration in spring xml. We use spring xml extention to use camel xml syntax
+within spring xml
+- Spring uses this configuration to start SpringCamelContext whihc is a subclass of DefaultCamelContext
+
+
+- There are 2 ways to configure route in spring application context
+- 1. create route in xml itself
+- 2. refer to java route builder through ref bean in xml
+

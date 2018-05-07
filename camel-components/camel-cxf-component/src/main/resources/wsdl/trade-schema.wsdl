@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://order.trade"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  targetNamespace="http://order.trade">
+
+    <!-- Type definitions for input- and output parameters for webservice -->
+    <wsdl:types>
+        <xs:schema targetNamespace="http://order.trade">
+            <xs:element name="incomingOrder">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="orderId"/>
+                        <xs:element type="xs:int" name="quantity"/>
+                        <xs:element type="xs:string" name="date"/>
+                        <xs:element type="xs:string" name="buySell"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="orderStatusReport">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="orderId"/>
+                        <xs:element type="xs:string" name="status"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+
+    <!-- Message definitions for input and output -->
+    <wsdl:message name="incomingOrder">
+        <wsdl:part name="in" element="tns:incomingOrder"/>
+    </wsdl:message>
+    <wsdl:message name="orderStatusReport">
+        <wsdl:part name="out" element="tns:orderStatusReport"/>
+    </wsdl:message>
+
+    <!-- Port (interface) definitions -->
+    <wsdl:portType name="TradeEndpoint">
+        <wsdl:operation name="Process">
+            <wsdl:input message="tns:incomingOrder"/>
+            <wsdl:output message="tns:orderStatusReport"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <!-- Port bindings to transports and encoding - HTTP, document literal encoding is used -->
+    <wsdl:binding name="TradeBinding" type="tns:TradeEndpoint">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="Process">
+            <soap:operation
+                    soapAction="http://order.trade/Process"
+                    style="document"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <!-- Service definition -->
+    <wsdl:service name="TradeEndpointService">
+        <wsdl:port name="TradeService" binding="tns:TradeBinding">
+            <soap:address location="changeme"/>
+        </wsdl:port>
+    </wsdl:service>
+
+</wsdl:definitions>
