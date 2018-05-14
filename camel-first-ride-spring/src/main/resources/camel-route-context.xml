@@ -8,7 +8,7 @@
 
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
         <route>
-            <from uri="file://camel-first-ride-spring/data/input?noop=true"/>
+            <from uri="file://camel-first-ride-spring/data/input"/>
             <to uri="file://camel-first-ride-spring/data/output"/>
         </route>
     </camelContext>

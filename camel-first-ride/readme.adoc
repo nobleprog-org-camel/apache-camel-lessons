@@ -1,4 +1,0 @@
-- Set compiler level 8
-1. File component
-1.1 - Change file path in container
-2. Option: noop=true/false

@@ -1,14 +1,11 @@
 import org.apache.camel.CamelContext;
 import org.apache.camel.test.spring.CamelSpringTestSupport;
 import org.junit.Test;
+import org.nobleprog.camel.components.cxf.IncomingOrder;
+import org.nobleprog.camel.components.cxf.OrderStatusReport;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import trade.order.IncomingOrder;
-import trade.order.OrderStatusReport;
 
-/**
- * Created by sahdev on 5/6/2018.
- */
 public class CxfWebServiceTest extends CamelSpringTestSupport {
 
     private CamelContext camelContext;

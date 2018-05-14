@@ -16,9 +16,6 @@ public class FileCopier {
         TimeUnit.SECONDS.sleep(2);
         camelContext.stop();
 
-        /*Main main = new Main();
-        main.addRouteBuilder(createCamelRoute());
-        main.run();*/
     }
 
     private static RouteBuilder createCamelRoute(){
@@ -28,8 +25,8 @@ public class FileCopier {
     private static class FileCopyingRoute extends RouteBuilder{
 
         public void configure() throws Exception {
-            from("file:D:\\sahdev\\workspace\\apachecamellessons\\camel-first-ride\\src\\main\\resources\\input?noop=true")
-                    .to("file:D:\\sahdev\\workspace\\apachecamellessons\\camel-first-ride\\src\\main\\resources\\output")
+            from("file://camel-first-ride//src//main//resources//input?noop=true")
+                    .to("file://camel-first-ride//src//main//resources//output")
                     .end();
 
         }

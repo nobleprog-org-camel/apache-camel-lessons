@@ -12,16 +12,14 @@
     <!-- the camel route -->
     <camelContext id="camel" trace="false" xmlns="http://camel.apache.org/schema/spring">
 
-        <route streamCache="true">
-            <!-- route starts from the cxf webservice, see camel-cxf.xml for details -->
+        <route>
             <from uri="cxf:bean:tradeEndpoint"/>
-            <!-- log a message in the log -->
-            <log message="Order successfully processed ${body}"/>
-            <!-- and then create the OK reply for the webservice which is still waiting for a reply -->
-            <!--<transform><method bean="replier" method="orderStatusReport"/></transform>-->
+
+            <log message="Trade successfully processed ${body}"/>
+
             <to uri="bean:replier?method=orderStatusReport"/>
-            <convertBodyTo type="java.lang.String"/>
         </route>
+
 
     </camelContext>
 

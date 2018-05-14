@@ -20,6 +20,14 @@
         <module>camel-first-ride-spring</module>
         <module>case-study-code</module>
         <module>camel-components</module>
+        <module>camel-integration-patterns</module>
+        <module>camel-message-transformation</module>
+        <module>mock-rest-service</module>
+        <module>camel-testing</module>
+        <module>camel-error-handling</module>
+        <module>camel-eip</module>
+        <module>camel-spring-java-config</module>
+        <module>camel-beans</module>
     </modules>
 
 

@@ -19,9 +19,5 @@ public class CamelSpring {
         camelContext.start();
         TimeUnit.SECONDS.sleep(3);
         camelContext.stop();
-
-/*
-        Main main = new Main();
-        main.run();*/
     }
 }

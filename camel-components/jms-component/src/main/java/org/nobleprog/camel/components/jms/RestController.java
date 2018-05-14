@@ -17,9 +17,4 @@ public class RestController {
         producerTemplate.sendBody("direct:start","New Trade Order");
     }
 
-    @RequestMapping(value = "/getJmsReply")
-    public String getJmsReply(){
-        //ProducerTemplate producerTemplate = camelContext.createProducerTemplate();
-       return producerTemplate.requestBody("jms:queue:willReply","New Trade Order",String.class);
-    }
 }

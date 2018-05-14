@@ -1,0 +1,20 @@
+{
+  "brokerName": "GolderBroker",
+  "partnership": "GOLDEN",
+  "trades": [
+    {
+      "orderId": "1",
+      "quantity": "2",
+      "date": "15May18",
+      "status": "New",
+      "buySell": "Buy"
+    },
+    {
+      "orderId": "1",
+      "quantity": "2",
+      "date": "15May18",
+      "status": "New",
+      "buySell": "Buy"
+    }
+  ]
+}

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-                  xmlns:tns="http://order.trade"
+                  xmlns:tns="http://cxf.components.camel.nobleprog.org"
                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
                   xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
                   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-                  targetNamespace="http://order.trade">
+                  targetNamespace="http://cxf.components.camel.nobleprog.org">
 
     <!-- Type definitions for input- and output parameters for webservice -->
     <wsdl:types>
-        <xs:schema targetNamespace="http://order.trade">
+        <xs:schema targetNamespace="http://cxf.components.camel.nobleprog.org">
             <xs:element name="incomingOrder">
                 <xs:complexType>
                     <xs:sequence>
@@ -51,7 +51,7 @@
         <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="Process">
             <soap:operation
-                    soapAction="http://order.trade/Process"
+                    soapAction="http://cxf.components.camel.nobleprog.org/Process"
                     style="document"/>
             <wsdl:input>
                 <soap:body parts="in" use="literal"/>

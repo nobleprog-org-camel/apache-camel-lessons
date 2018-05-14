@@ -10,6 +10,6 @@
 
     <cxf:cxfEndpoint id="tradeEndpoint"
                      address="http://localhost:9000/orderTrade/"
-                     serviceClass="trade.order.TradeEndpoint"/>
+                     serviceClass="org.nobleprog.camel.components.cxf.TradeEndpoint"/>
 
 </beans>
