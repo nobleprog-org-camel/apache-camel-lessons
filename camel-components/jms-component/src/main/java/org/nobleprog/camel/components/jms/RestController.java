@@ -16,5 +16,10 @@ public class RestController {
         //ProducerTemplate producerTemplate = camelContext.createProducerTemplate();
         producerTemplate.sendBody("direct:start","New Trade Order");
     }
+    @RequestMapping(value = "/startRequestReplyRoute")
+    public String startRequestReplyRoute(){
+        //ProducerTemplate producerTemplate = camelContext.createProducerTemplate();
+        return producerTemplate.requestBody("jms:incomingOrder","New Trade Order",String.class);
+    }
 
 }
