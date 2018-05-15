@@ -25,7 +25,9 @@ public class FileCopier {
     private static class FileCopyingRoute extends RouteBuilder{
 
         public void configure() throws Exception {
-            from("file://camel-first-ride//src//main//resources//input?noop=true")
+
+            from("file://camel-first-ride//src//main//resources//input")
+                    .log("Recieved file content ${body}")
                     .to("file://camel-first-ride//src//main//resources//output")
                     .end();
 
