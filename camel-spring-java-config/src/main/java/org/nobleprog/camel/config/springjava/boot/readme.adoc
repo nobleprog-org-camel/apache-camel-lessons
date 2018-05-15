@@ -1,2 +1,0 @@
-- Purpose of this Application is to show you that, in order to make CamelConfiguration come into picure of spring context
-  all you need is to make CamelConfiguration picked up during spring context initialization.
