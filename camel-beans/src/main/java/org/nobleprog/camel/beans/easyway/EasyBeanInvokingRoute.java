@@ -11,7 +11,6 @@ public class EasyBeanInvokingRoute extends RouteBuilder{
     @Override
     public void configure() throws Exception {
         from("direct:startHardWay")
-                .bean(pojoBean)
                 .to("mock:endHardWay");
     }
 }

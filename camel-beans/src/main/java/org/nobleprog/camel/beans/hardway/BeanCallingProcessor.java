@@ -12,6 +12,6 @@ public class BeanCallingProcessor implements Processor{
     public void process(Exchange exchange) throws Exception {
         String body = exchange.getIn().getBody(String.class);
 
-        exchange.getIn().setBody(pojoBean.invoke(body));
+
     }
 }

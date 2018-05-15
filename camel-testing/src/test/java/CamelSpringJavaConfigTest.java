@@ -21,7 +21,7 @@ public class CamelSpringJavaConfigTest {
     @Autowired
     private ProducerTemplate template;
 
-    @EndpointInject(uri = "mock:quote")
+
     private MockEndpoint mockEndpoint;
 
     @Test

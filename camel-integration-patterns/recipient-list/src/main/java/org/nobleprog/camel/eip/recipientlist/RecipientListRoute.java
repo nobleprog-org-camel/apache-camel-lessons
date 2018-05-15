@@ -7,6 +7,6 @@ public class RecipientListRoute extends RouteBuilder {
     public void configure() throws Exception {
         from("direct:recipientList")
                 .log("computing recipientlist from ${body}")
-                .recipientList(bean(RecipientListBean.class));
+                .recipientList(method(RecipientListBean.class));
     }
 }

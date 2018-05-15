@@ -7,7 +7,8 @@ import org.springframework.stereotype.Component;
 public class MessageFiltererRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
-        from("jms:queue:xmlOrders").filter(xpath("//date[text()!='31-DEC-9999']"))
+        from("jms:queue:xmlOrders")
+
                 .to("jms:queue:fulfillment");
     }
 }

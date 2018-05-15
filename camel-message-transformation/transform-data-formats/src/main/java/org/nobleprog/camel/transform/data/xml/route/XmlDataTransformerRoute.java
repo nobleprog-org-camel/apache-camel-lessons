@@ -12,7 +12,6 @@ public class XmlDataTransformerRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("file://camel-message-transformation/transform-data-formats/data/input")
-                .unmarshal().jaxb("org")
                 .log("successfully unmarshalled ${body}")
                         .enrich("http://localhost:8089/settlementDate", new AggregationStrategy() {
                             @Override
@@ -29,7 +28,6 @@ public class XmlDataTransformerRoute extends RouteBuilder {
                                 return oldExchange;
                             }
                         })
-                        .marshal().jaxb("org")
                         .to("file://camel-message-transformation/transform-data-formats/data/ouput");
     }
 }

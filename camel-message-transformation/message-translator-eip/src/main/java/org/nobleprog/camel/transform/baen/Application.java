@@ -12,10 +12,7 @@ public class Application {
     public static void main(String argsp[]) throws Exception {
 
         CamelContext camelContext = new DefaultCamelContext();
-        camelContext.addRoutes(transformerWithProcessor());
 
-        //camelContext.addRoutes(transformerWithBean());
-        camelContext.addRoutes(new TransformerRoute());
         camelContext.start();
 
         TimeUnit.SECONDS.sleep(3);

@@ -9,7 +9,7 @@ public class RouteDefinition extends RouteBuilder
 
     @Override
     public void configure() throws Exception {
-        from("direct:start").routeId("orderDispatchRoute")
+        from("direct:startAdvice").routeId("orderDispatchRoute")
                 .transform(body().regexReplaceAll(",","-"))
                 .to("http://localhost:8090/order");
     }

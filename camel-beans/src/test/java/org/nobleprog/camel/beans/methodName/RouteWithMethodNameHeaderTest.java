@@ -27,8 +27,9 @@ public class RouteWithMethodNameHeaderTest extends CamelTestSupport {
             }
         });
 
-        template.sendBodyAndHeader("direct:startHeader","Message Body","CamelBeanMethodName","invoke");
-        template.sendBodyAndHeader("direct:startHeader","Message Body","CamelBeanMethodName","process");
+        //template.sendBodyAndHeader("direct:startHeader","Message Body","CamelBeanMethodName","invoke");
+        //template.sendBodyAndHeader("direct:startHeader","Message Body","CamelBeanMethodName","process");
+
         //Next call will result in AmbiguousMethodCallException
         template.sendBody("direct:startHeader","Message Body");
 

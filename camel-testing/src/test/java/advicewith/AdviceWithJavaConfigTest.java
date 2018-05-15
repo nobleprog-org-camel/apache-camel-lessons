@@ -44,7 +44,6 @@ public class AdviceWithJavaConfigTest {
 
         mockEndpoint.expectedMessageCount(1);
         mockEndpoint.expectedBodiesReceived("Trade-Order-To-Send");
-        producerTemplate.sendBody("direct:start","Trade,Order,To,Send");
 
         mockEndpoint.assertIsSatisfied();
     }

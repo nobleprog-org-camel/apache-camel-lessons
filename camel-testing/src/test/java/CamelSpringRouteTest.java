@@ -28,7 +28,7 @@ public class CamelSpringRouteTest extends CamelSpringTestSupport{
 
     @Override
     protected AbstractApplicationContext createApplicationContext() {
-        return new ClassPathXmlApplicationContext("route-context.xml","camel-test.xml");
+        return new ClassPathXmlApplicationContext();
     }
 
     @Test

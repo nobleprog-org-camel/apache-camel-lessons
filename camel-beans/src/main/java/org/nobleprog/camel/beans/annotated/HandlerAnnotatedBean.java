@@ -10,7 +10,6 @@ public class HandlerAnnotatedBean {
         return  body + " invoked";
     }
 
-    @Handler
     public String process(String body){
         return  body + " processed";
     }

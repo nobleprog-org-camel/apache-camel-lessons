@@ -12,7 +12,6 @@ public class JsonDataTransformerRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("file://camel-message-transformation/transform-data-formats/data/jso/input")
-                .unmarshal().json(JsonLibrary.Jackson,TradeOrder.class)
                 .log("successfully unmarshalled ${body}")
                 .enrich("http://localhost:8089/settlementDate", new AggregationStrategy() {
                     @Override
@@ -29,7 +28,6 @@ public class JsonDataTransformerRoute extends RouteBuilder {
                         return oldExchange;
                     }
                 })
-                .marshal().json(JsonLibrary.Jackson)
                 .to("file://camel-message-transformation/transform-data-formats/data/jso/output");
 
     }

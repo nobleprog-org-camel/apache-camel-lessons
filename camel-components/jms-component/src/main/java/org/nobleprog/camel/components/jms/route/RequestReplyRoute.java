@@ -7,8 +7,7 @@ import org.springframework.stereotype.Component;
 public class RequestReplyRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
-        from("jms:incomingOrder")
-                .inOut("jms:validateOrder");
+        from("jms:incomingOrder");
 
         from("jms:validateOrder")
                 .bean(OrderValidationBean.class);
