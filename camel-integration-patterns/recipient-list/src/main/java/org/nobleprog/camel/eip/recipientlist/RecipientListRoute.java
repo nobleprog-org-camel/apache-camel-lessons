@@ -8,5 +8,7 @@ public class RecipientListRoute extends RouteBuilder {
         from("direct:recipientList")
                 .log("computing recipientlist from ${body}")
                 .recipientList(method(RecipientListBean.class));
+        //TODO:implement parallel processing
+        //TODO: implement aggregation if consumer send you response back
     }
 }

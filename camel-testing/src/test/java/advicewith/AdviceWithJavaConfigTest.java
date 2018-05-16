@@ -7,10 +7,9 @@ import org.apache.camel.builder.AdviceWithRouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
 import org.apache.camel.test.spring.CamelSpringDelegatingTestContextLoader;
 import org.apache.camel.test.spring.CamelSpringRunner;
-import org.apache.camel.test.spring.MockEndpoints;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.nobleprog.camel.advicewith.Application;
+import org.nobleprog.camel.test.javaconfig.Application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
@@ -40,10 +39,10 @@ public class AdviceWithJavaConfigTest {
             }
         });
 
-        camelContext.start();
-
         mockEndpoint.expectedMessageCount(1);
         mockEndpoint.expectedBodiesReceived("Trade-Order-To-Send");
+
+        //TODO: send message using producer "Trade,Order,To,Send"
 
         mockEndpoint.assertIsSatisfied();
     }

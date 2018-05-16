@@ -2,18 +2,16 @@ import org.apache.camel.*;
 import org.apache.camel.component.mock.MockEndpoint;
 import org.apache.camel.test.spring.CamelSpringDelegatingTestContextLoader;
 import org.apache.camel.test.spring.CamelSpringRunner;
-import org.apache.camel.test.spring.CamelSpringTestContextLoader;
-import org.apache.camel.test.spring.MockEndpoints;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.nobleprog.camel.test.javaconfig.Applicaiton;
+import org.nobleprog.camel.test.javaconfig.Application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
 import static org.junit.Assert.assertEquals;
 
 @RunWith(CamelSpringRunner.class)
-@ContextConfiguration(classes = Applicaiton.class,loader = CamelSpringDelegatingTestContextLoader.class)
+@ContextConfiguration(classes = Application.class,loader = CamelSpringDelegatingTestContextLoader.class)
 public class SimulateRemoteFTPTest {
 
     @EndpointInject(uri = "mock:ftp")

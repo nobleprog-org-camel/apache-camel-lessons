@@ -28,7 +28,7 @@ public class RestRouteBuilder extends RouteBuilder {
                          }
                 );
 
-        from("cxfrs:http://localhost:8080?resourceClasses=org.nobleprog.camel.errorhandling.onexception.handling.TradeRestService&bindingStyle=SimpleConsumer&providers=jacksonJaxbJsonProvider")
+        from("cxfrs:http://localhost:8080?resourceClasses=org.nobleprog.camel.errorhandling.onexception.handling.TradeRestService&bindingStyle=SimpleConsumer")
                 //Note: In order to use dynamic values from the header we have to use toD() instead of to()
                 .toD("direct:${header.operationName}");
 

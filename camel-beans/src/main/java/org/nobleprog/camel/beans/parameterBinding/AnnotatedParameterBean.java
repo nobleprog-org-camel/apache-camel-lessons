@@ -16,7 +16,8 @@ public class AnnotatedParameterBean {
         return  " with context invoked";
     }
 
-    public String process( @Body String body){
+    //TODO: 1. Just run without changing, 2. Annotate Body
+    public String process( String body){
         return body + " with Annotated Body processed";
     }
 }

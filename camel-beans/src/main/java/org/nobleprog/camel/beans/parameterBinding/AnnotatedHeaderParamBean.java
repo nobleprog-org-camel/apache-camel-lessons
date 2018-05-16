@@ -12,7 +12,8 @@ public class AnnotatedHeaderParamBean {
         return body + " invoked";
     }
 
-    public String process(@Headers Map<String, Object> headers, @Body String body) {
+    //TODO: Annotate Headers and Body
+    public String process( Map<String, Object> headers, String body) {
         return body + " with Annotated Body processed";
     }
 }

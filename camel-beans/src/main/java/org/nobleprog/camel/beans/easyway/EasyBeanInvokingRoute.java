@@ -11,6 +11,8 @@ public class EasyBeanInvokingRoute extends RouteBuilder{
     @Override
     public void configure() throws Exception {
         from("direct:startHardWay")
+                //TODO: inovke bean here
+                //TODO: Default Constructor is needed in case you pass .class
                 .to("mock:endHardWay");
     }
 }

@@ -10,6 +10,7 @@ public class HandlerAnnotatedBean {
         return  body + " invoked";
     }
 
+    // TODO:Specify Annotation to let camel HANDLE it
     public String process(String body){
         return  body + " processed";
     }

@@ -27,6 +27,7 @@ public class RouteWithMethodNameHeaderTest extends CamelTestSupport {
             }
         });
 
+        //TODO: Camel MethodName example calls
         //template.sendBodyAndHeader("direct:startHeader","Message Body","CamelBeanMethodName","invoke");
         //template.sendBodyAndHeader("direct:startHeader","Message Body","CamelBeanMethodName","process");
 

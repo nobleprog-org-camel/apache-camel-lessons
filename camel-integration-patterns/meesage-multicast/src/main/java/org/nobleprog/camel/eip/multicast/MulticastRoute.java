@@ -20,7 +20,7 @@ public class MulticastRoute extends RouteBuilder {
         from("direct:multicastParallel")
                 .log("Sending same message to all recipients in parallel")
                 .multicast()
-
+                //TODO: Implement parallel processing here by using executor service
                 .to("mock:consumerA").to("mock:consumerB");
     }
 }

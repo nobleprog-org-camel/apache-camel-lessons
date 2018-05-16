@@ -18,8 +18,14 @@ public class RecipientListRouteTest extends CamelTestSupport{
         MockEndpoint consumerA = getMockEndpoint("mock:consumerA");
         MockEndpoint consumerB = getMockEndpoint("mock:consumerB");
 
-        consumerA.whenAnyExchangeReceived(exchange -> log.info("Recieved message "+exchange.getIn().getBody()));
-        consumerB.whenAnyExchangeReceived(exchange -> log.info("Recieved message "+exchange.getIn().getBody()));
+        consumerA.whenAnyExchangeReceived(exchange -> {
+            log.info("Recieved message " + exchange.getIn().getBody());
+            exchange.getIn().setBody(" Consumer A response ");
+        });
+        consumerB.whenAnyExchangeReceived(exchange -> {
+            log.info("Recieved message " + exchange.getIn().getBody());
+            exchange.getIn().setBody(" Consumer B response ");
+        });
 
         template.sendBody("direct:recipientList","Send to multiple");
 

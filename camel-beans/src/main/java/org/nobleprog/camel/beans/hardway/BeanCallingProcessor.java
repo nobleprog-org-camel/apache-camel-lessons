@@ -11,7 +11,6 @@ public class BeanCallingProcessor implements Processor{
     @Override
     public void process(Exchange exchange) throws Exception {
         String body = exchange.getIn().getBody(String.class);
-
-
+        //TODO: setBody in exchange by calling pojo
     }
 }

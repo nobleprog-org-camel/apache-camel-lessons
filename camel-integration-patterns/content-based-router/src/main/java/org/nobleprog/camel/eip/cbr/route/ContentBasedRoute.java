@@ -7,9 +7,10 @@ import org.springframework.stereotype.Component;
 public class ContentBasedRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
-        from("file://camel-integration-patterns/content-based-router/data/input").choice()
+        from("file://camel-integration-patterns/content-based-router/data/input")
+                .choice()
                 .when(header("CamelFileName").endsWith("xml")).to("jms:queue:xmlOrders")
-                
+                //TODO: Implement to route csv order to csOrders queue
                 .otherwise().to("jms:queue:badOrders").stop()
                 .end()
                 .to("jms:queue:furtherProcessing");

@@ -13,7 +13,6 @@ public class CamelMockComponentTest extends CamelTestSupport {
     protected CamelContext createCamelContext() throws Exception {
         CamelContext context = super.createCamelContext();
         // seda is a very very basic in memory JMS broker
-        // This is only possible to switch for a few components.
         context.addComponent("jms", context.getComponent("seda"));
         return context;
     }
@@ -26,9 +25,11 @@ public class CamelMockComponentTest extends CamelTestSupport {
     @Test
     public void testMock() throws InterruptedException {
 
+        //TODO: implement to getMockEndpoint and set expectations with 1 and "Camel Mock","Another mock"
+
         template.sendBody("jms:queue:testQueue","Another mock");
         template.sendBody("jms:queue:testQueue","Camel Mock");
 
-
+        //TODO: invoke mock's assertIsSatisfied
     }
 }

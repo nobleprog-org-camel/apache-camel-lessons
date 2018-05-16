@@ -9,7 +9,7 @@ public class ConsumerRoute extends RouteBuilder {
     public void configure() throws Exception {
         from("jms:queue:tradeInQueue")
                 .log("Received jms message ${body}")
-                .to("jms:queue:tradeOutQueue")
+                //TODO: pass incoming message to tradeOutQueue
                 .end();
     }
 }

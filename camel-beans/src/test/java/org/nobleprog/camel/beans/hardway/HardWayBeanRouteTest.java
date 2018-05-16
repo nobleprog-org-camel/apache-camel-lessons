@@ -18,8 +18,9 @@ public class HardWayBeanRouteTest extends CamelTestSupport{
     }
 
     @Test
-    public void invokeBeanFromProcessorTest(){
+    public void invokeBeanFromProcessorTest() throws InterruptedException {
         MockEndpoint endHardWay = getMockEndpoint("mock:endHardWay");
+        endHardWay.expectedBodiesReceived("Message Body from pojo");
 
         endHardWay.whenAnyExchangeReceived(new Processor() {
             @Override
@@ -30,6 +31,6 @@ public class HardWayBeanRouteTest extends CamelTestSupport{
 
         template.sendBody("direct:startHardWay","Message Body");
 
-
+        endHardWay.assertIsSatisfied();
     }
 }
