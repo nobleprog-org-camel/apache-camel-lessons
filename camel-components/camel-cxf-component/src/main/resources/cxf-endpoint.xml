@@ -8,8 +8,8 @@
          http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
          http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd">
 
-    <cxf:cxfEndpoint id="tradeEndpoint"
+    <!--<cxf:cxfEndpoint id="tradeEndpoint"
                      address="http://localhost:9000/orderTrade/"
-                     serviceClass="org.nobleprog.camel.components.cxf.TradeEndpoint"/>
+                     serviceClass="org.nobleprog.camel.components.cxf.TradeEndpoint"/>-->
 
 </beans>
