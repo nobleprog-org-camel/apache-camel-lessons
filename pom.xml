@@ -28,6 +28,7 @@
         <module>camel-eip</module>
         <module>camel-spring-java-config</module>
         <module>camel-beans</module>
+        <module>karaf-bundles</module>
     </modules>
 
 

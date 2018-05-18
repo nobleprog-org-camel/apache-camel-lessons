@@ -7,7 +7,7 @@ public class RoundRobinLoadBalancerRoute extends RouteBuilder {
     public void configure() throws Exception {
         from("direct:start").routeId("roundRobinRoute")
                 .log("Request received ${body}")
-                //TODO: Implement loadbalancer with RoundRobin strategy
+                .loadBalance().roundRobin()
                 .to("http://server_1_for_service.com/process").to("http://server_2_for_service.com/process");
     }
 }

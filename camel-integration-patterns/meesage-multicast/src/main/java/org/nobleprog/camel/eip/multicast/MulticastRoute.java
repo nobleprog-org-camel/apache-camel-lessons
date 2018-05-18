@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 
 public class MulticastRoute extends RouteBuilder {
 
-    ExecutorService executor = Executors.newFixedThreadPool(15);
+    ExecutorService executor = Executors.newFixedThreadPool(2);
 
     @Override
     public void configure() throws Exception {
@@ -20,7 +20,7 @@ public class MulticastRoute extends RouteBuilder {
         from("direct:multicastParallel")
                 .log("Sending same message to all recipients in parallel")
                 .multicast()
-                //TODO: Implement parallel processing here by using executor service
+                .parallelProcessing() .executorService(executor)
                 .to("mock:consumerA").to("mock:consumerB");
     }
 }
