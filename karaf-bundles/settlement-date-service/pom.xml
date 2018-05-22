@@ -24,6 +24,16 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -45,9 +55,9 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        
+                        <Private-Package>org.nobleprog.karaf.service.impl</Private-Package>
                         <Export-Package>org.nobleprog.karaf.service</Export-Package>
-                        <Bundle-Activator>org.nobleprog.camel.karaf.bundle.RouteActivator</Bundle-Activator>
+                        <Bundle-Activator>org.nobleprog.karaf.service.ServiceActivator</Bundle-Activator>
                     </instructions>
                 </configuration>
             </plugin>
