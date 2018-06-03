@@ -29,6 +29,7 @@
         <module>camel-spring-java-config</module>
         <module>camel-beans</module>
         <module>karaf-bundles</module>
+        <module>camel-hiding-middleware</module>
     </modules>
 
 
