@@ -13,6 +13,8 @@
         <module>message-translator-eip</module>
         <module>content-enricher-eip</module>
         <module>transform-data-formats</module>
+        <module>custom-message-converter</module>
+        <module>camel-csv-transformation</module>
     </modules>
 
     <artifactId>camel-message-transformation</artifactId>

@@ -6,12 +6,13 @@ import org.apache.camel.processor.aggregate.AggregationStrategy;
 import org.nobleprog.camel.transform.data.xml.model.TradeOrder;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class XmlDataTransformerRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("file://camel-message-transformation/transform-data-formats/data/input")
+        from("file://camel-message-transformation/transform-data-formats/data/xml/input")
+                //TODO: Invoke unmarshal using jaxb("org")
                 .log("successfully unmarshalled ${body}")
                         .enrich("http://localhost:8089/settlementDate", new AggregationStrategy() {
                             @Override
@@ -28,6 +29,7 @@ public class XmlDataTransformerRoute extends RouteBuilder {
                                 return oldExchange;
                             }
                         })
-                        .to("file://camel-message-transformation/transform-data-formats/data/ouput");
+                        //TODO: invoke marshal using jaxb("org")
+                        .to("file://camel-message-transformation/transform-data-formats/data/xml/output");
     }
 }

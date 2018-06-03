@@ -16,6 +16,7 @@
         <module>camel-routing-slip</module>
         <module>dynamic-router</module>
         <module>camel-load-balancer</module>
+        <module>camel-async-processing</module>
     </modules>
 
     <build>

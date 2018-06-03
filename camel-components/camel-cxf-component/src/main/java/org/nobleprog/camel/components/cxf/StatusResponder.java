@@ -1,6 +1,7 @@
 package org.nobleprog.camel.components.cxf;
 
 import org.apache.camel.Exchange;
+import org.nobleprog.camel.webservice.api.OrderStatusReport;
 
 
 public class StatusResponder {

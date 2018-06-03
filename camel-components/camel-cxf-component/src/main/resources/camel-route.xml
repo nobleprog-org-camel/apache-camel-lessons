@@ -12,13 +12,13 @@
     <!-- the camel route -->
     <camelContext id="camel" trace="false" xmlns="http://camel.apache.org/schema/spring">
 
-       <!-- <route>
+        <route>
             <from uri="cxf:bean:tradeEndpoint"/>
 
             <log message="Trade successfully processed ${body}"/>
 
             <to uri="bean:replier?method=orderStatusReport"/>
-        </route>-->
+        </route>
 
 
     </camelContext>

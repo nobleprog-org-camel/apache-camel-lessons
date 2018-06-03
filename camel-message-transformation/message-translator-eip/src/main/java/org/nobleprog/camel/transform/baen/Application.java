@@ -13,6 +13,9 @@ public class Application {
 
         CamelContext camelContext = new DefaultCamelContext();
 
+        camelContext.addRoutes(transformerWithProcessor());
+        //TODO: Add transformerWithBean to the camelContext
+
         camelContext.start();
 
         TimeUnit.SECONDS.sleep(3);
@@ -25,7 +28,7 @@ public class Application {
             @Override
             public void configure() throws Exception {
                 from("file://camel-message-transformation/message-translator-eip/data/input")
-                        .bean(new CsvTransformer())
+                        .bean(CsvTransformer.class)
                         .to("file://camel-message-transformation/message-translator-eip/data/output")
                         .end()
                         .to("direct:start");

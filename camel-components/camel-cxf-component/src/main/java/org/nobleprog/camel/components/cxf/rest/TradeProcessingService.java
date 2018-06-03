@@ -1,8 +1,9 @@
 package org.nobleprog.camel.components.cxf.rest;
 
-import org.nobleprog.camel.components.cxf.IncomingOrder;
-import org.nobleprog.camel.components.cxf.OrderStatusReport;
+import org.nobleprog.camel.webservice.api.IncomingOrder;
+import org.nobleprog.camel.webservice.api.OrderStatusReport;
 import org.springframework.stereotype.Component;
+
 
 @Component
 public class TradeProcessingService {

@@ -25,6 +25,7 @@ public class Application {
             @Override
             public void configure() throws Exception {
                 from("file://camel-message-transformation/content-enricher-eip/data/input")
+                        //TODO: Invoke enrich EIP here and ask EnricherStrategy to combine messages
                         .bean(new CsvProcessor())
                         .to("file://camel-message-transformation/content-enricher-eip/data/ouput");
             }

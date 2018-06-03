@@ -38,7 +38,7 @@ public class Application {
         CxfEndpoint cxfEndpoint = new CxfEndpoint();
         cxfEndpoint.setBeanId("cxfEndpoint");
         cxfEndpoint.setAddress("http://localhost:8083/service");
-        cxfEndpoint.setServiceClass("org.nobleprog.camel.components.cxf.TradeEndpoint");
+        cxfEndpoint.setServiceClass("org.nobleprog.camel.webservice.api.TradeEndpoint");
         return cxfEndpoint;
     }
 }
