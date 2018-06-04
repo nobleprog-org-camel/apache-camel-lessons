@@ -1,9 +1,0 @@
- - As we discussed during enterprise integration introduction that different systems can have different format and protocol
-    for communicating with them, so message transformation is needed in case camel application need to communicate with them.
- - When we recieve any message from producer we consume it and transform into a structure which represents that message into our
-   data model.
- - For eg. external systems might place orders in file in xml structure and we need to process that order and send it to another
-    system which expects data in the json format.
-
-
-- Next we see how camel message-translator works
