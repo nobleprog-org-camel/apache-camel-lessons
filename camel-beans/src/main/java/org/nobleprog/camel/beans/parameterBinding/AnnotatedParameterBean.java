@@ -5,19 +5,12 @@ import org.apache.camel.CamelContext;
 
 public class AnnotatedParameterBean {
 
-    /*
-     If below method is provided then camel will throw AmbiguousMethodException
-     */
-    /*public String invoke(String body, CamelContext camelContext){
-        return  body + " with context invoked";
-    }*/
-
     public String invoke(CamelContext camelContext){
         return  " with context invoked";
     }
 
     //TODO: 1. Just run without changing, 2. Annotate Body
-    public String process( String body){
+    public String process(String body){
         return body + " with Annotated Body processed";
     }
 }

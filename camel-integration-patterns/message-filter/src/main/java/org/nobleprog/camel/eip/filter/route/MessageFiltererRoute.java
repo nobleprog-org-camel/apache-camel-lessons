@@ -8,7 +8,7 @@ public class MessageFiltererRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("jms:queue:xmlOrders")
-                .filter(xpath("//date[text()!='31-DEC-9999']"))
+                //TODO:implement xpath filtration by using expression "//date[text()!='31-DEC-9999']"
                 .to("jms:queue:fulfillment");
     }
 }

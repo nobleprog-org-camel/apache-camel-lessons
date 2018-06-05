@@ -13,7 +13,7 @@ public class JmsConfig {
     @Bean
     public JmsComponent jmsComponent(){
         JmsComponent jmsComponent = new JmsComponent();
-        //TODO: create ConnectionFactory to configure jms with your broker
+        //TODO: create ConnectionFactory to configure jms with your broker "tcp://localhost:61616"
         //jmsComponent.setConnectionFactory(connectionFactory());
         return jmsComponent;
     }

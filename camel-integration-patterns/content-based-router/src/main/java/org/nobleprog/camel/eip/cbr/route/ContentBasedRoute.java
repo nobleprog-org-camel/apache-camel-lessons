@@ -10,7 +10,7 @@ public class ContentBasedRoute extends RouteBuilder {
         from("file://camel-integration-patterns/content-based-router/data/input")
                 .choice()
                 .when(header("CamelFileName").endsWith("xml")).to("jms:queue:xmlOrders")
-                .when(header("CamelFileName").endsWith("csv")).to("jms:queue:csvOrders")
+                //TODO:implement csvOrders based on file name header
                 .otherwise().to("jms:queue:badOrders").stop()
                 .end()
                 .to("jms:queue:furtherProcessing");

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class RestRoute extends RouteBuilder {
+public class CreateOrderRoute extends RouteBuilder {
     @Autowired
     private CamelContext camelContext;
 
@@ -16,7 +16,7 @@ public class RestRoute extends RouteBuilder {
         //TODO: Uncomment below to see the tracing of our route
         //camelContext.setTracing(true);
 
-        from("direct:start")
+        from("direct:createOrder")
                 .bean(OrderToSqlBean.class, "createOrderSql")
                 .to("jdbc:dataSource")
                 .process(new Processor() {
@@ -24,7 +24,6 @@ public class RestRoute extends RouteBuilder {
                     public void process(Exchange exchange) throws Exception {
                         exchange.getIn().setBody("Order Created Successfully");
                     }
-                })
-        ;
+                });
     }
 }

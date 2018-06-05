@@ -14,7 +14,7 @@ public class Controller {
 
     @RequestMapping(value = "/createOrder",method = RequestMethod.POST)
     public String createOrder(@RequestBody  TradeOrder tradeOrder){
-        return producerTemplate.requestBody("direct:start",tradeOrder,String.class);
+        return producerTemplate.requestBody("direct:createOrder",tradeOrder,String.class);
     }
 
     @RequestMapping(value = "/getOrder/{id}",method = RequestMethod.GET)

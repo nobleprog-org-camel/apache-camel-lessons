@@ -4,7 +4,7 @@ import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
 
 @Component
-public class OrderProcessingRoute extends RouteBuilder{
+public class RetrieveOrderRoute extends RouteBuilder{
 
     public void configure() throws Exception {
         from("direct:getOrder")

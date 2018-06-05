@@ -11,6 +11,8 @@ import org.nobleprog.camel.test.javaconfig.Application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
+import static org.junit.Assert.assertEquals;
+
 @RunWith(CamelSpringRunner.class)
 @ContextConfiguration(classes = Application.class, loader = CamelSpringDelegatingTestContextLoader.class)
 public class AdviceAndResponseWithRouteTest {
@@ -30,15 +32,10 @@ public class AdviceAndResponseWithRouteTest {
         interceptRemoteHttpInvocationToBeAdviced();
 
         //TODO call and implement stubRemoteHttpResponseWithMock to send "with,mock,http,response";
+        final String response = producerTemplate.requestBody("direct:startAdviceResponse", "Trade,Order,To,Send", String.class);
 
-        MockEndpoint mockEnrcihedAdivce = mockEnrcihedAdivce = camelContext.getEndpoint("mock:catchit", MockEndpoint.class);
-        mockEnrcihedAdivce.expectedMessageCount(1);
-        mockEnrcihedAdivce.expectedBodiesReceived("Trade-Order-To-Send-with-mock-http-response");
+        assertEquals("Trade-Order-To-Send-with-mock-http-response",response);
 
-
-        producerTemplate.sendBody("direct:startAdviceResponse", "Trade,Order,To,Send");
-
-        mockEnrcihedAdivce.assertIsSatisfied();
     }
 
     private void interceptRemoteHttpInvocationToBeAdviced() throws Exception {
@@ -52,4 +49,5 @@ public class AdviceAndResponseWithRouteTest {
             }
         });
     }
+
 }

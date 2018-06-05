@@ -27,7 +27,7 @@ public class FileCopier {
         public void configure() throws Exception {
 
             from("file://camel-first-ride//src//main//resources//input")
-                    .log("Recieved file content ${body}")
+                    //TODO: Implement logging here by calling log() method, pass ${body} expression to log message body
                     .to("file://camel-first-ride//src//main//resources//output")
                     .end();
 

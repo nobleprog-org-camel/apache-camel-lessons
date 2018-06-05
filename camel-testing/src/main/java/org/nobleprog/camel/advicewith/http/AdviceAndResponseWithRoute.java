@@ -11,8 +11,7 @@ public class AdviceAndResponseWithRoute extends RouteBuilder{
         from("direct:startAdviceResponse").routeId("orderHttpRoute")
                 .enrich("http://localhost:8090/order",new EnricherAggregator())
                 .transform(body().regexReplaceAll(",","-"))
-                .log("Message with http response ${body}")
-                .to("mock:catchit");
+                .log("Message with http response ${body}");
 
     }
 }

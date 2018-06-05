@@ -1,5 +1,4 @@
 import org.apache.camel.CamelContext;
-import org.apache.camel.main.Main;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
