@@ -10,6 +10,8 @@
     <modules>
         <module>camel-karaf-bundle</module>
         <module>settlement-date-service</module>
+        <module>settlement-service-client</module>
+        <module>karaf-feature-installer</module>
     </modules>
     <artifactId>karaf-bundles</artifactId>
     <packaging>pom</packaging>

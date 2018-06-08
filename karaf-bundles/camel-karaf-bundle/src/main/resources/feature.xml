@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<features>
-
-    <feature name="camel-project" version="1.0.0">
-        <bundle start-level="80">mvn:org.nobleprog/settlement-date-service/1.0-SNAPSHOT</bundle>
-        <bundle start-level="85">mvn:org.nobleprog/camel-karaf-bundle/1.0-SNAPSHOT</bundle>
-    </feature>
-</features>
