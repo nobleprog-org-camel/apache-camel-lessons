@@ -15,6 +15,7 @@ public class Application {
 
         camelContext.addRoutes(transformerWithProcessor());
         //TODO: Add transformerWithBean to the camelContext
+        //TODO: Add TransformerRoute to the camelContext
 
         camelContext.start();
 
