@@ -17,7 +17,6 @@ public class CsvRoute extends RouteBuilder {
 
     public void configure() throws Exception {
         from("file://camel-message-transformation/camel-csv-transformation/data/input")
-                .unmarshal(csvDataFormat)
                 //TODO:Invoke unmarshal using csvDataFormat
                 .process(new Processor() {
                     @Override
@@ -28,7 +27,6 @@ public class CsvRoute extends RouteBuilder {
                         }
                     }
                 })
-                .marshal(csvDataFormat)
                 //TODO: invoke marshal using csvDataFormat
                 .to("file://camel-message-transformation/camel-csv-transformation/data/output?fileName=order-status.csv");
     }
