@@ -21,4 +21,11 @@ public class Controller {
     public TradeOrder getOrder(@PathVariable String id){
         return producerTemplate.requestBody("direct:getOrder",id,TradeOrder.class);
     }
+
+    @RequestMapping(value = "/postXml",method = RequestMethod.POST)
+    public void postXML(@RequestBody String xml){
+         producerTemplate.sendBody("direct:incomingMessage",xml);
+    }
+
+
 }

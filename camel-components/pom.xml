@@ -17,6 +17,7 @@
         <module>camel-jdbc</module>
         <module>webservice-api</module>
         <module>camel-webservice-client</module>
+        <module>camel-custom-component</module>
     </modules>
 
 </project>
